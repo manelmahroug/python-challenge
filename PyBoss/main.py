@@ -68,10 +68,10 @@ def parseCSV(file_name, delimeter=","):
     """
     with open(file_name, "r") as fh:
         header = fh.readline().strip().split(delimeter)
-        lol = []
+        list_of_lists = []
         for line in fh:
-            lol.append(line.strip().split(delimeter))
-        return header, lol
+            list_of_lists.append(line.strip().split(delimeter))
+        return header, list_of_lists
         
 
 
@@ -95,7 +95,7 @@ def main():
     fn = filename_in.split('.')
     filename_out = fn[0] + '_modified.' + fn[1]
     parse = parseCSV(filename_in)
-    lol = [parse[0]]
+    list_of_lists= [parse[0]]
     for row in parse[1]:
         emp_id = row[0]
         names = row[1].split(' ')
@@ -105,11 +105,11 @@ def main():
         ssn = '***-**-' + row[3][-4:]
         state = us_state_abbrev[row[4]]
         lol.append([emp_id, first, last, dob_str, ssn, state])
-    writeCSV(filename_out, lol)
+    writeCSV(filename_out, list_of_lists)
     
 
 
-# In[51]:
+# In[54]:
 
 
 main()
