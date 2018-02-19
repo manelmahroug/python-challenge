@@ -104,12 +104,12 @@ def main():
         dob_str = '/'.join([dob[1], dob[2], dob[0]])  # join is opposite of split
         ssn = '***-**-' + row[3][-4:]
         state = us_state_abbrev[row[4]]
-        lol.append([emp_id, first, last, dob_str, ssn, state])
+        list_of_lists.append([emp_id, first, last, dob_str, ssn, state])
     writeCSV(filename_out, list_of_lists)
     
 
 
-# In[54]:
+# In[55]:
 
 
 main()
