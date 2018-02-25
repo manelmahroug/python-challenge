@@ -9,24 +9,16 @@ import csv
 import sys
 
 csv_path1 = os.path.join("..","Desktop", "budget_data_1.csv") #creating a path across operating systems
-#csv_path2 = os.path.join("..","Desktop", "budget_data_2.csv")
 
 # budget 1
-print("------budget 1------")
-totalMonths(csv_path1)
-totalRevenue(csv_path1)
-avgChange(csv_path1)
-maxChange(csv_path1)
-minChange(csv_path1)
+print("Financial Analysis")
+print("----------------------------------------")
+totalMonths(csv_path)
+totalRevenue(csv_path)
+avgChange(csv_path)
+maxChange(csv_path)
+minChange(csv_path)
     
-# budget 2
-print("------budget 2------")
-totalMonths(csv_path2)
-totalRevenue(csv_path2)
-avgChange(csv_path2)
-maxChange(csv_path2)
-minChange(csv_path2)
-        
 
 
 
@@ -46,6 +38,7 @@ def totalMonths(csv_path):
             months.append(row[0].split('/')[0])
 
         print(len(set(months)))
+        print(
 
 
 # In[81]:
@@ -71,7 +64,7 @@ def totalRevenue(csv_path):
 
 # the average change in revenue between months 
 def avgChange(csvreader):
-    with open (csv_path1, newline = "") as fh:
+    with open (csv_path, newline = "") as fh:
         csvreader = csv.reader(fh, delimiter = ",")
         next(csvreader, None)
     
@@ -97,7 +90,7 @@ def avgChange(csvreader):
 
 # the maximum change in revenue (date and amount)
 def maxChange(csvreader):
-    with open (csv_path1, newline = "") as fh:
+    with open (csv_path, newline = "") as fh:
         csvreader = csv.reader(fh, delimiter = ",")
         next(csvreader, None)
     
@@ -125,7 +118,7 @@ def maxChange(csvreader):
 
 #the minimum change in revenue (date and amount)
 def minChange(csvreader):
-    with open (csv_path1, newline = "") as fh:
+    with open (csv_path, newline = "") as fh:
         csvreader = csv.reader(fh, delimiter = ",")
         next(csvreader, None)
     
